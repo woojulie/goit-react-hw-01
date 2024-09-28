@@ -1,33 +1,30 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import './Profile.css'
 
 const Profile = (props) => {
   const { name, tag, location, image, stats } = props;
     
   return (
-    <div>
-      <div>
-        <img
-          src={image}
-          alt="User avatar"
-          style={{ width: '100px', height: '100px', borderRadius: '50%' }}
-        />
-        <p>{name}</p>
-        <p>{tag}</p>
-        <p>{location}</p>
+    <div className="profile-card">
+      <div className="profile-info">
+        <img src={image} alt="User avatar" className="profile-avatar" />
+        <p className="profile-name">{name}</p>
+        <p className="profile-tag">@{tag}</p>
+        <p className="profile-location">{location}</p>
       </div>
 
-      <ul>
+      <ul className="profile-stats">
         <li>
-          <span>Followers: </span>
+          <span>Followers</span>
           <span>{stats.followers}</span>
         </li>
         <li>
-          <span>Views: </span>
+          <span>Views</span>
           <span>{stats.views}</span>
         </li>
         <li>
-          <span>Likes: </span>
+          <span>Likes</span>
           <span>{stats.likes}</span>
         </li>
       </ul>

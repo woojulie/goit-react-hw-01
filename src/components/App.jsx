@@ -1,30 +1,19 @@
 import { useState } from 'react'
 import './App.css'
 import Profile from './Profile';
+import userData from './userData.json';
 
-const user = {
-  name: 'Petra Marica',
-  tag: 'pmarica',
-  location: 'Salvador, Brasil',
-  image: 'https://cdn-icons-png.flaticon.com/512/1077/1077012.png',
-  stats: {
-    followers: 1000,
-    views: 2000,
-    likes: 3000,
-  },
-};
-
-function App() {
+const App = () => {
   return (
-    <div>
+    <>
       <Profile
-        name={user.name}
-        tag={user.tag}
-        location={user.location}
-        image={user.image}
-        stats={user.stats}
+        name={userData.username}
+        tag={userData.tag}
+        location={userData.location}
+        image={userData.avatar}
+        stats={userData.stats}
       />
-    </div>
+    </>
   );
-}
+};
 export default App;
